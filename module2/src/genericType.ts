@@ -15,8 +15,7 @@
     // const boolArray : Array<boolean> = [true, false, true, false]
     const boolArray : GenericArray<boolean> = [true, false, true, false]
 
-
-
+    
     const user : GenericArray<{name:string; age:number; role:string}> = [ // type casting an array of object using generic array type
         {
             name:"john",
@@ -31,8 +30,12 @@
     ]
     type GenericTuple<x,y> = [x, y] // declaring tuple as a generic type takes x and y parameters(data types)  
     const manus : GenericTuple<string, string>  = ["x", "y"] // re using the generic type
-    const userWithId: GenericTuple<number, {name:string; email:string}> = [0, {name:"john", email:""} ] // re using the generic type
-
-
+    
+    interface User{
+        name:string;
+        email:string
+    }
+    const userWithId: GenericTuple<number, User> = [0, {name:"john", email:""} ] // re using the generic type
+    
 
 }
